@@ -1,0 +1,1 @@
+// export const SOME_GLOBAL_CONFIG = "value";
