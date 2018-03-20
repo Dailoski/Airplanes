@@ -1,14 +1,21 @@
 import React from "react";
-
-
+import { Switch, Route, Redirect } from "react-router-dom";
+import axios from "axios";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
+        
     }
-
     render() {
-        return;
+        return(
+            <Switch>
+                {/* <Redirect exact from="/" to="/MainPage" /> 
+                <Route exact path="/MainPage" component={MainPage} /> */}
+                {/* <Route exact path="/SingleAircraft" component={SingleAircraft} /> */}
+                    
+            </Switch>
+        );
     }
 }
 
