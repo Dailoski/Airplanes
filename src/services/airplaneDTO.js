@@ -8,7 +8,7 @@ class AirplaneDTO{
         this._man = obj.Man;
         this._mdl = obj.Mdl;
         this._comp = obj.Op;
-        this._mainThing = obj.Opicao;
+        
     }
     get alt(){
         return this._alt;
@@ -52,12 +52,7 @@ class AirplaneDTO{
     set comp(a){
         this._comp = a;
     }
-    get mainThing(){
-        return this._mainThing;
-    }
-    set mainThing(a){
-        this._mainThing = a;
-    }
+    
 }
 
 export default AirplaneDTO;
