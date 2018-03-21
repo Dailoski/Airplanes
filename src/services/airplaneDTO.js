@@ -8,6 +8,8 @@ class AirplaneDTO{
         this._man = obj.Man;
         this._mdl = obj.Mdl;
         this._comp = obj.Op;
+        this._lat = obj.Lat;
+        this._long =obj.Long;
         
     }
     get alt(){
@@ -51,6 +53,18 @@ class AirplaneDTO{
     }
     set comp(a){
         this._comp = a;
+    }
+    get long(){
+        return this._long;
+    }
+    set long(a){
+        this._long = a;
+    }
+    get lat(){
+        return this._lat;
+    }
+    set lat(a){
+        this._lat = a;
     }
     
 }
