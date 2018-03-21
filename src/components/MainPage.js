@@ -17,7 +17,7 @@ class MainPage extends React.Component{
     initialState(){
         return{
             aircraftsArr: [],
-            
+            error: "Please enable your location, the application will not work otherwise!"
         };
     }
     componentDidMount(){
@@ -26,14 +26,20 @@ class MainPage extends React.Component{
         const lat = window.sessionStorage.getItem("latitude");
         const long = window.sessionStorage.getItem("longitude");
         if(!!lat && !!long){
+            var x = document.querySelector(".error-msg");
+            x.remove();
             this.getApi(lat, long);
             loadMap(lat, long);
+            setInterval(() => {that.getApi(lat, long);}, 60000);
         }
         else{navigator.geolocation.getCurrentPosition(function(a){
+            var x = document.querySelector(".error-msg");
+            x.remove();
             window.sessionStorage.setItem("latitude", a.coords.latitude);
             window.sessionStorage.setItem("longitude", a.coords.longitude);
             that.getApi(a.coords.latitude,a.coords.longitude);
             loadMap(a.coords.latitude,a.coords.longitude);
+            setInterval(() => {that.getApi(lat, long);}, 60000);
         });}
     };
     getApi(x,y){
@@ -47,7 +53,6 @@ class MainPage extends React.Component{
                 );
                 const x = sortAirplanes(arr);
                 this.storeData(x);
-                console.log(x);
                 this.setState({aircraftsArr:x});
             });    
     }
@@ -56,10 +61,9 @@ class MainPage extends React.Component{
         window.sessionStorage.setItem("data", x);
     }
     render(){
-        console.log(window.screen.availWidth);
+        
         return<div className="map" id="mapContainer">
-            
-            
+            <div className="error-msg">{this.state.error}</div>
             {this.state.aircraftsArr.map(airplane => {
                 return (
                     <Link key={airplane.id} ad={{airplane}} to={`/FlightDetails/${airplane.id}`}>

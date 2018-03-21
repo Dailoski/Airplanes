@@ -9,7 +9,7 @@ class CommunicationService{
             url: "https://public-api.adsbexchange.com/VirtualRadar/AircraftList.json?lat="
              + objInfo.lat + "&lng=" + objInfo.long +"&fDstL=0&fDstU=200",
             dataType: "jsonp",
-            jsonpCallback: "logResults",
+            //jsonpCallback: "logResults",
             success: (result) => callBackSucces(result),
             fail: (err) => callBackFail(err)
         });
