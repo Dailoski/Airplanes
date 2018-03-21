@@ -94,6 +94,8 @@ body{
     background-color: #f44242;
 }
 .planes-div{
+  font-family: 'Righteous', sans-serif;
+  color: black;
   background-color: #FDF3E7;
   margin-left: 5%;
   display: inline-block;
@@ -107,6 +109,13 @@ body{
   transition: all 0.25s cubic-bezier(0, 0.98, 0, 2);
   transform: scale(0.95);
  }
+ .planes-div:hover{
+    background:#53a7ea;
+    -webkit-transform: scale(1.7);
+    -ms-transform: scale(1.7);
+    transform: scale(1.7);
+    z-index: 22;
+ }
     
 .flip-image{
     -webkit-transform: scaleX(-1);
@@ -117,7 +126,11 @@ body{
     border-radius: 50%;
     margin-left: 25%;
     margin-right: 25%;
- 
+}
+.details-logo:hover{
+    -webkit-transform: rotateZ(-30deg);
+    -ms-transform: rotateZ(-30deg);
+    transform: rotateZ(-30deg);
 }
 .details-page{
     text-align: center;
