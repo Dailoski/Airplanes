@@ -230,8 +230,9 @@ body{
             height: 100vh;
         }
         .planes-div {
+            font-size: 0,3rem;
             position: fixed;
-            width: 10%; } 
+            width: 9%; } 
         .planes-div img {
             margin: block;
             width: 60%;
