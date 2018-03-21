@@ -13,7 +13,8 @@ class FlightDetais extends React.Component{
             model : "",
             flightOrigin : "",
             destination : "",
-            logo : ""
+            logo : "",
+            comp : ""
         };
     }
     binder(){
@@ -27,13 +28,15 @@ class FlightDetais extends React.Component{
             manufacturer : flight._man,
             model : flight._mdl,
             flightOrigin : flight._origin,
-            destination: flight._dest
-
+            destination: flight._dest,
+            comp: flight._comp
         });
         communication.getLogo(flight._comp, this.callbackSuccess, this.callbackFail);
     }
     callbackSuccess(a){this.setState({logo: a.data.logo});}
-    callbackFail(a){console.log(a);}
+    callbackFail(a){console.log(a);
+        this.setState({logo: "../pics/logo-default.png"});
+    }
     findFlight(id){
         var arr = [];
         var rightOne;
@@ -46,12 +49,15 @@ class FlightDetais extends React.Component{
         
        
        
-        return <div>
-            <img src={this.state.logo} />
-            <div>Manufacturer: {this.state.manufacturer} </div>
-            <div>Model: {this.state.model}</div>
-            <div>Flight Origin: {this.state.flightOrigin}</div>
-            <div>Flight Destination: {this.state.destination}</div>
+        return <div className= "details-page">
+            <div className="name-and-logo">
+                <div className="company-name">{this.state.comp}</div>
+                <img className="details-logo" src={this.state.logo || "../pics/logo-default.png"} />
+            </div>
+            <div><span>Manufacturer:</span><br/> {this.state.manufacturer || "Not Available"} </div>
+            <div><span>Model:</span><br/> {this.state.model || "Not Available"}</div>
+            <div><span>Flight Origin:</span><br/> {this.state.flightOrigin || "Not Available" }</div>
+            <div><span>Flight Destination:</span><br/> {this.state.destination || "Not Available"}</div>
 
         </div>;
     }

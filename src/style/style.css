@@ -91,7 +91,7 @@ video {
     height: 30vh;
 }
 body{
-    background-color: #C63D0F;
+    background-color: #f44242;
 }
 .planes-div{
   background-color: #FDF3E7;
@@ -112,6 +112,34 @@ body{
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
 }
+.details-logo{
+    width: 50%;
+    border-radius: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+ 
+}
+.details-page{
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+}
+.details-page div{
+        font-size: 2.85rem;
+        vertical-align: middle;
+        line-height: 1; 
+        margin-bottom: 4%;
+}
+.details-page div span{
+    font-family: 'Orbitron', sans-serif;
+}
+.company-name{
+    font-family: 'Righteous', sans-serif;
+}
+.error-msg{
+    padding: 15%;
+    font-family: 'Righteous', sans-serif;
+    font-size: 2rem;
+}
 
 @media screen and (min-width: 400px) {
     .planes-div {
@@ -123,14 +151,64 @@ body{
         
     }
     }
-@media screen and (min-width: 1020px) {
+@media screen and (min-width: 500px){
+    .error-msg{
+        padding: 15%;
+        font-family: 'Righteous', sans-serif;
+        font-size: 3rem;
+    }
+    .details-logo{
+        width: 35%;
+        border-radius: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+     
+    }
+}
+@media screen and (min-width: 800px){
+    .details-logo{
+        width: 35%;
+        border-radius: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+     
+    }
+    .name-and-logo{
+        margin-left: 3%;
+        float: left;
+    }
+}
+@media screen and (min-width: 1060px) {
     .planes-div {
         margin-left: 4%;
         width: 20%; } 
     .planes-div img {
         margin: block;
         width: 60%;
-            
+          
+    }
+
+    .error-msg{
+        padding: 15%;
+        font-family: 'Righteous', sans-serif;
+        font-size: 4rem;
+    }
+    .name-and-logo{
+        float: none;
+    }
+    .details-logo{
+        width: 20%;
+        border-radius: 50%;
+        margin-left: 0;
+        margin-right: 0;
+        float: left;
+     
+    }
+    .details-page .company-name{
+        margin-left: 3%;
+        font-family: 'Righteous', sans-serif;
+        float: left;
+        display: block;
     }
     }
     @media screen and (min-width: 1400px) {
