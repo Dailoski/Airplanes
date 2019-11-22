@@ -24,11 +24,7 @@ module.exports = {
             },
             {
                 test: /(\.css)$/,
-<<<<<<< HEAD
-                loaders: []
-=======
-                loaders: ["style", "css"]
->>>>>>> 7ce68255b56c4e290e40f203479dedb01933a4f0
+                loaders: ["style"]
             }
         ]
     }
