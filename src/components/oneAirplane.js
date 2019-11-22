@@ -23,7 +23,7 @@ const OneAirplane = (props) => {
         position = positionGenerator(props.plane.lat, props.plane.long, w*0.8, h*0.8);
     }
     
-    //Math.random() * (max - min) + min;
+    
     return(
        
         <div style={position} className="planes-div" >
