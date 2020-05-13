@@ -14,7 +14,7 @@ module.exports = {
                 enforce: "pre",
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: "eslint-loader",
+                loader: "eslint-loader"
             },
             
             {
@@ -24,7 +24,7 @@ module.exports = {
             },
             {
                 test: /(\.css)$/,
-                loaders: ["style", "css"]
+                loaders: ["style"]
             }
         ]
     }
